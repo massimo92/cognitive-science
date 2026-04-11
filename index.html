@@ -333,7 +333,7 @@ const C = {
 };
 const SERIF = "'Georgia','Lora','Times New Roman',serif";
 const SANS  = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans-serif";
-const TOTAL = 14;
+const TOTAL = 15;
 const GR = "linear-gradient(90deg,"+C.sage+","+C.magenta+","+C.amber+")";
 const tipStyle = { background:C.white, border:"1px solid "+C.border, borderRadius:6, padding:"10px 14px", fontFamily:SANS, fontSize:12, color:C.navy, boxShadow:"0 2px 8px rgba(0,0,0,0.08)" };
 
@@ -777,9 +777,55 @@ function S9() {
   </Slide>);
 }
 
-// ── S10: Strategy Table ────────────────────────────────────────────
+// ── S10: Cognitive Path ────────────────────────────────────────────
 function S10() {
-  const cell = { padding:"6px 10px", fontFamily:SANS, fontSize:"clamp(9px,1vw,12px)", borderBottom:"1px solid "+C.border };
+  const arrow = (thick, color) => ({
+    flex:1, maxWidth:140, height:thick?4:2, background:thick?color:C.borderDk, borderRadius:2, position:"relative"
+  });
+  const label = (text, sub, color) => (
+    <div style={{ textAlign:"center", minWidth:120 }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(14px,1.5vw,18px)", fontWeight:700, color, margin:0 }}>{text}</p>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.muted, margin:"2px 0 0" }}>{sub}</p>
+    </div>
+  );
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.teal, margin:"0 0 28px 0" }}>Cognitive Route</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.navy, lineHeight:1.35, maxWidth:"90%", margin:"0 0 40px 0" }}>
+        Which path do children take<br/>to the <em style={{ color:C.coral }}>relative</em> judgment?
+      </h2>
+      <div style={{ display:"flex", flexDirection:"column", gap:20, alignItems:"center", maxWidth:600, width:"100%" }}>
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, width:"100%" }}>
+          {label("Standard", "part-whole", C.violet)}
+          <div style={{ position:"relative", flex:1, maxWidth:120, display:"flex", alignItems:"center" }}>
+            <div style={arrow(false, C.borderDk)} />
+            <span style={{ position:"absolute", top:-28, left:"50%", transform:"translateX(-50%)", fontFamily:SANS, fontSize:"clamp(18px,2.2vw,26px)", fontWeight:700, color:C.muted }}>30%</span>
+          </div>
+          {label("Relative", "qualitative", C.coral)}
+        </div>
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, width:"100%" }}>
+          {label("Distributive", "part-part", C.teal)}
+          <div style={{ position:"relative", flex:1, maxWidth:120, display:"flex", alignItems:"center" }}>
+            <div style={arrow(true, C.teal)} />
+            <span style={{ position:"absolute", top:-28, left:"50%", transform:"translateX(-50%)", fontFamily:SANS, fontSize:"clamp(18px,2.2vw,26px)", fontWeight:700, color:C.teal }}>70%</span>
+          </div>
+          {label("Relative", "qualitative", C.coral)}
+        </div>
+      </div>
+    </div>
+    <div style={{ padding:"8px 8%", borderTop:"1px solid "+C.border }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", color:C.muted, margin:0, lineHeight:1.5, textAlign:"center", maxWidth:700, marginLeft:"auto", marginRight:"auto" }}>
+        {"Based on when distributive and standard judgments disagree."}
+      </p>
+    </div>
+    <SrcBar text={"Pighin et al. (2017) p. 170. Incoherent judgments, binomial test p < 0.01."} />
+    <SlideNum n={10} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S11: Strategy Table ────────────────────────────────────────────
+function S11() {
+  const cell = { padding:"10px 14px", fontFamily:SANS, fontSize:"clamp(11px,1.2vw,15px)", borderBottom:"1px solid "+C.border };
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"4% 5% 2%" }}>
       <H2>How Children Get It Wrong</H2>
@@ -806,12 +852,12 @@ function S10() {
       </InsightBar>
     </div>
     <SrcBar text={"Pighin et al. (2017) Table 3. Z&G did not disaggregate Joint + Other + Missing."} />
-    <SlideNum n={10} total={TOTAL} />
+    <SlideNum n={11} total={TOTAL} />
   </Slide>);
 }
 
-// ── S11: Debate (chat style, rewritten for clarity) ────────────────
-function S11() {
+// ── S12: Debate (chat style, rewritten for clarity) ────────────────
+function S12() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"3% 5% 1.5%" }}>
       <H2>The Debate</H2>
@@ -824,41 +870,47 @@ function S11() {
           {"But we found that \u201Cnumber of chances\u201D \u2014 which are NOT observed frequencies \u2014 produce equal or even better accuracy. If it were about a frequency module, chances shouldn\u2019t work."}
         </ChatMsg>
         <ChatMsg left={true} name="Brase (2018)" initials="GB" color={C.sage} bgColor="#e3efe7">
-          {"\u201CChances\u201D are just frequencies in disguise. When children hear \u201C15 chances out of 24,\u201D they implicitly count. So the evolutionary hypothesis still holds."}
+          {"Your \u201Cchances\u201D use integers, subset relations, and preserve the reference class \u2014 the exact same structure as natural frequencies. Other chance formats wouldn\u2019t produce this effect. It\u2019s the structure, not the label."}
         </ChatMsg>
-        <ChatMsg left={false} name="Pighin (2017)" initials="SP" color={C.magenta} bgColor="#f3e4ec">
-          {"We tested that claim: laypeople perceive chances as beliefs about single events, not frequency counts. Yet they still reason well. The real driver is structural transparency \u2014 both formats make the part-whole relations visible. No evolution needed."}
+        <ChatMsg left={false} name="Pighin (2018)" initials="SP" color={C.magenta} bgColor="#f3e4ec">
+          {"Yet 63\u201374% of participants perceive chances as single-event beliefs, not frequency counts \u2014 even in your own data. If the mechanism were frequency-specific, that shouldn\u2019t happen."}
+        </ChatMsg>
+        <ChatMsg left={true} name="Massimo (2026)" initials="MA" color={C.amber} bgColor="#f5f0e0">
+          {"Hey guys, everything OK? \uD83D\uDC40"}
         </ChatMsg>
       </div>
     </div>
     <SrcBar text={"Brase (2018) Psychon Bull Rev; Pighin, Tentori & Girotto (2017) Psychon Bull Rev."} />
-    <SlideNum n={11} total={TOTAL} />
-  </Slide>);
-}
-
-// ── S12: Epistemological Question ──────────────────────────────────
-function S12() {
-  return (<Slide>
-    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
-      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.violet, margin:"0 0 28px 0" }}>The Epistemological Question</p>
-      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.navy, lineHeight:1.35, maxWidth:"90%", margin:"0 0 28px 0" }}>
-        When does expanding a hypothesis<br/>to absorb counter-evidence<br/>become <em style={{ color:C.sage }}>ad hoc</em>?
-      </h2>
-      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.5vw,18px)", color:C.body, lineHeight:1.7, maxWidth:"80%" }}>
-        {"This mirrors "}<strong style={{ color:C.violet }}>{"Lakatos\u2019s problem of degenerating research programmes"}</strong>.
-      </p>
-    </div>
-    <div style={{ padding:"8px 8%", borderTop:"1px solid "+C.border }}>
-      <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", color:C.muted, margin:0, lineHeight:1.5, textAlign:"center", maxWidth:700, marginLeft:"auto", marginRight:"auto" }}>
-        {"Imre Lakatos (1970) argued that a research programme becomes \u201Cdegenerating\u201D when it survives only by adding ad hoc modifications to absorb counter-evidence, rather than generating new testable predictions. A \u201Cprogressive\u201D programme, by contrast, predicts novel facts before they are observed."}
-      </p>
-    </div>
     <SlideNum n={12} total={TOTAL} />
   </Slide>);
 }
 
-// ── S13: Conclusion ────────────────────────────────────────────────
+// ── S13: Epistemological Question ──────────────────────────────────
 function S13() {
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.violet, margin:"0 0 28px 0" }}>The Epistemological Question</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.navy, lineHeight:1.35, maxWidth:"90%", margin:"0 0 28px 0" }}>
+        {"When does absorbing counter-evidence become "}<em style={{ color:C.sage }}>ad hoc</em>{"?"}
+      </h2>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.5vw,18px)", color:C.body, lineHeight:1.7, maxWidth:"80%", margin:"0 0 20px 0" }}>
+        {"Brase\u2019s claim that chances are \u201Cfrequencies in disguise\u201D absorbs Pighin\u2019s findings without generating new predictions."}
+      </p>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.3vw,16px)", color:C.muted, lineHeight:1.7, maxWidth:"75%" }}>
+        {"This mirrors "}<strong style={{ color:C.violet }}>{"Lakatos\u2019s degenerating research programmes"}</strong>{"."}
+      </p>
+    </div>
+    <div style={{ padding:"8px 4%", borderTop:"1px solid "+C.border }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", color:C.muted, margin:0, lineHeight:1.5, textAlign:"center" }}>
+        {"Lakatos (1970): a programme is \u201Cdegenerating\u201D when it absorbs counter-evidence via ad hoc modifications instead of generating new testable predictions."}
+      </p>
+    </div>
+    <SlideNum n={13} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S14: Conclusion ────────────────────────────────────────────────
+function S14() {
   const pts = [
     { accent:C.magenta, key:"Bayesian intuitions are not innate.", rest:" They depend on numerical literacy and cultural context. The 128-point PISA gap (\u2248 3 school years) between Shanghai and Italy is a massive confound." },
     { accent:C.teal, key:"Structural clarity beats number format.", rest:" Extensional part-whole relations explain facilitation better than an evolved frequency module. Chances work just as well \u2014 or better." },
@@ -883,12 +935,12 @@ function S13() {
       {"Sources: Zhu & Gigerenzer (2006) Cognition 98; Pighin et al. (2017) Cognition 168; Brase (2018) & Pighin et al. (2017) Psychon Bull Rev; OECD PISA 2003\u20132018."}
     </div>
     <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
-    <SlideNum n={13} total={TOTAL} dark />
+    <SlideNum n={14} total={TOTAL} dark />
   </Slide>);
 }
 
-// ── S14: Open Question ────────────────────────────────────────────
-function S14() {
+// ── S15: Open Question ────────────────────────────────────────────
+function S15() {
   const dims = [
     { accent:C.teal,    label:"Fewer steps",        left:"15 + 9",                       right:"0.10 \u00D7 0.80 / ..." },
     { accent:C.magenta, label:"Simpler operations",  left:"sum whole numbers",             right:"multiply & divide decimals" },
@@ -923,14 +975,14 @@ function S14() {
         {"Perhaps no evolutionary module or extensional capacity is needed \u2014 just less demand on working memory."}
       </p>
     </div>
-    <SlideNum n={14} total={TOTAL} />
+    <SlideNum n={15} total={TOTAL} />
   </Slide>);
 }
 
 // ── App ────────────────────────────────────────────────────────────
 function App() {
   const [cur, setCur] = useState(0);
-  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14];
+  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
   const goP = useCallback(()=>setCur(c=>Math.max(0,c-1)),[]);
