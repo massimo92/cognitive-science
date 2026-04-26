@@ -333,7 +333,7 @@ const C = {
 };
 const SERIF = "'Georgia','Lora','Times New Roman',serif";
 const SANS  = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans-serif";
-const TOTAL = 15;
+const TOTAL = 21;
 const GR = "linear-gradient(90deg,"+C.sage+","+C.magenta+","+C.amber+")";
 const tipStyle = { background:C.white, border:"1px solid "+C.border, borderRadius:6, padding:"10px 14px", fontFamily:SANS, fontSize:12, color:C.navy, boxShadow:"0 2px 8px rgba(0,0,0,0.08)" };
 
@@ -530,8 +530,235 @@ function S2() {
   </Slide>);
 }
 
-// ── S3: Big Numbers ────────────────────────────────────────────────
+// ── S3: Z&G Bold Question ─────────────────────────────────────────
 function S3() {
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.sage, margin:"0 0 28px 0" }}>Zhu & Gigerenzer, 2006</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.navy, lineHeight:1.35, maxWidth:"90%", margin:"0 0 28px 0" }}>
+        {"Adults reason better with frequencies."}
+        <br />
+        {"But is this "}
+        <em style={{ color:C.sage }}>learned</em>
+        {" or "}
+        <em style={{ color:C.amber }}>innate</em>{"?"}
+      </h2>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.5vw,18px)", color:C.body, lineHeight:1.7, maxWidth:"78%" }}>
+        {"If our minds evolved a frequency-processing module, even children without formal probability training should succeed."}
+      </p>
+    </div>
+    <SrcBar text="Zhu & Gigerenzer (2006) Cognition 98(3), 287–308." />
+    <SlideNum n={3} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S4: Z&G Design ────────────────────────────────────────────────
+function S4() {
+  const row = (label, value) => (
+    <div style={{ display:"flex", justifyContent:"space-between", padding:"5px 0", borderBottom:"1px solid "+C.border }}>
+      <span style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.muted }}>{label}</span>
+      <span style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.navy, fontWeight:600 }}>{value}</span>
+    </div>
+  );
+  const formatTag = (text, color) => (
+    <span style={{ display:"inline-block", background:color+"20", color:color, fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", fontWeight:600, padding:"2px 8px", borderRadius:4, marginRight:4 }}>{text}</span>
+  );
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", padding:"3.5% 6% 2%" }}>
+      <H2>The Design</H2>
+      <Sub>{"Two studies, same school in Beijing. Children had never been taught probability."}</Sub>
+      <div style={{ display:"flex", gap:"3.5%", flex:1, alignItems:"stretch" }}>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.sage, display:"flex", flexDirection:"column" }}>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sage, margin:"0 0 12px 0" }}>Study 1 — 7 problems</p>
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies only", C.sage)}</p>
+          {row("4th graders", "16")}
+          {row("5th graders", "15")}
+          {row("6th graders", "14")}
+          <div style={{ height:10 }} />
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Adults (MBA) {formatTag("frequencies", C.sage)} {formatTag("probabilities", C.amber)}</p>
+          {row("Frequencies group", "23")}
+          {row("Probabilities group", "23")}
+          <div style={{ flex:1 }} />
+          <div style={{ background:C.white, borderRadius:6, padding:"8px 12px", marginTop:10 }}>
+            <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.9vw,11px)", color:C.muted, margin:0, lineHeight:1.45, fontStyle:"italic" }}>
+              {"Children were not tested with probabilities — no child baseline."}
+            </p>
+          </div>
+        </div>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.sageLt, display:"flex", flexDirection:"column" }}>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sageLt, margin:"0 0 12px 0" }}>Study 2 — 10 problems</p>
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies", C.sage)} {formatTag("probabilities", C.amber)}</p>
+          {row("Frequencies group", "30 (10 per grade)")}
+          {row("Probabilities group", "30 (10 per grade)")}
+          <div style={{ height:10 }} />
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Adults (MBA) {formatTag("frequencies", C.sage)} {formatTag("probabilities", C.amber)}</p>
+          {row("Frequencies group", "30")}
+          {row("Probabilities group", "30")}
+          <div style={{ flex:1 }} />
+          <div style={{ background:C.white, borderRadius:6, padding:"8px 12px", marginTop:10 }}>
+            <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.9vw,11px)", color:C.muted, margin:0, lineHeight:1.45, fontStyle:"italic" }}>
+              {"Randomly assigned. Establishes the probability baseline for all groups."}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <SrcBar text="Zhu & Gigerenzer (2006) Method, pp. 5–6." />
+    <SlideNum n={4} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S5: Z&G Results Chart ─────────────────────────────────────────
+function S5() {
+  const GRAY = "#c8c4be";
+  const zgData = [
+    { grade:"4th grade", freqS1:17, freqS2:19, probS1:null, probS1Visual:1.2, probS2:0, probS2Visual:1.2 },
+    { grade:"5th grade", freqS1:29, freqS2:42, probS1:null, probS1Visual:1.2, probS2:0, probS2Visual:1.2 },
+    { grade:"6th grade", freqS1:70, freqS2:48, probS1:null, probS1Visual:1.2, probS2:0, probS2Visual:1.2 },
+    { grade:"Adults",    freqS1:75, freqS2:77, probS1:57,   probS1Visual:57,  probS2:47, probS2Visual:47 },
+  ];
+  function ChartTipZG({ active, payload, label }) {
+    if (!active||!payload) return null;
+    return (<div style={tipStyle}>
+      <p style={{ fontWeight:600, margin:"0 0 4px 0" }}>{label}</p>
+      {payload.map((p,i)=>{
+        const isP1 = p.dataKey==="probS1Visual";
+        const isP2 = p.dataKey==="probS2Visual";
+        const isFreqS1 = p.dataKey==="freqS1";
+        const isFreqS2 = p.dataKey==="freqS2";
+        const realVal = isP1 ? p.payload.probS1 : isP2 ? p.payload.probS2 : p.value;
+        const displayName = isP1 ? "Probabilities — Study 1" : isP2 ? "Probabilities — Study 2" : p.name;
+        const tipColor = (isP1||isP2) ? C.amber : (isFreqS1) ? C.sage : (isFreqS2) ? C.sageLt : C.body;
+        if (realVal === null) return (<p key={i} style={{ margin:"2px 0", color:GRAY }}>{displayName}: <strong>not assessed</strong></p>);
+        return (<p key={i} style={{ margin:"2px 0", color:tipColor }}>{displayName}: <strong>{realVal+"%"}</strong></p>);
+      })}
+    </div>);
+  }
+  function ZGLegend() {
+    const items = [
+      { color:C.amber, label:"Probabilities — Study 1" },
+      { color:C.sage, label:"Frequencies — Study 1" },
+      { color:C.amber+"99", label:"Probabilities — Study 2" },
+      { color:C.sageLt, label:"Frequencies — Study 2" },
+      { color:GRAY, label:"Not assessed" },
+    ];
+    return (<div style={{ display:"flex", flexDirection:"column", gap:6, justifyContent:"center" }}>
+      {items.map((it,i)=>(<div key={i} style={{ display:"flex", alignItems:"center", gap:6 }}>
+        <div style={{ width:10, height:10, borderRadius:2, background:it.color, flexShrink:0 }} />
+        <span style={{ fontFamily:SANS, fontSize:"clamp(9px,0.9vw,11px)", color:C.body, whiteSpace:"nowrap" }}>{it.label}</span>
+      </div>))}
+    </div>);
+  }
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"4% 5% 2%" }}>
+      <H2>{"Children Can Solve Bayesian Problems"}</H2>
+      <Sub>{"% correct Bayesian responses — Zhu & Gigerenzer (2006)"}</Sub>
+      <div style={{ flex:1, minHeight:0, display:"flex", gap:"2%" }}>
+        <div style={{ flex:1, minHeight:0 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={zgData} margin={{ top:8,right:8,left:-8,bottom:0 }} barCategoryGap="18%">
+              <CartesianGrid vertical={false} stroke="#eee" strokeDasharray="3 3" />
+              <XAxis dataKey="grade" tick={{ fill:C.body,fontSize:13,fontFamily:SANS }} axisLine={false} tickLine={false} />
+              <YAxis domain={[0,100]} tick={{ fill:C.muted,fontSize:11,fontFamily:SANS }} axisLine={false} tickLine={false} tickFormatter={v=>v+"%"} />
+              <Tooltip content={<ChartTipZG />} />
+              <Bar dataKey="probS1Visual" name={"Probabilities — Study 1"}>
+                {zgData.map((d,i)=><Cell key={i} fill={d.probS1===null ? GRAY : C.amber} />)}
+              </Bar>
+              <Bar dataKey="freqS1" name={"Frequencies — Study 1"} fill={C.sage} />
+              <Bar dataKey="probS2Visual" name={"Probabilities — Study 2"}>
+                {zgData.map((d,i)=><Cell key={i} fill={C.amber+"99"} />)}
+              </Bar>
+              <Bar dataKey="freqS2" name={"Frequencies — Study 2"} fill={C.sageLt} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div style={{ display:"flex", alignItems:"center" }}>
+          <ZGLegend />
+        </div>
+      </div>
+    </div>
+    <SrcBar text="Zhu & Gigerenzer (2006) Figures 2 & 3." />
+    <SlideNum n={5} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S6: Cognitive Waves ───────────────────────────────────────────
+function S6() {
+  const waves = [
+    { num:"1", label:"Guessing", peak:"4th grade", desc:"No consistent strategy.", example:"“3 out of 20”", color:C.mutedLt, icon:"○" },
+    { num:"2", label:"Centering", peak:"4th–5th grade", desc:"Focus on one aspect only: base rate or evidence.", example:"“10 out of 100” or “17 out of 100”", color:C.coral, icon:"◐" },
+    { num:"3", label:"Pre-Bayes", peak:"5th–6th grade", desc:"Right denominator, approximate numerator.", example:"“10 out of 17” instead of 8", color:C.teal, icon:"◕" },
+    { num:"4", label:"Bayes", peak:"Adults", desc:"Full integration of base rate and evidence.", example:"“8 out of 17”", color:C.sage, icon:"●" },
+  ];
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"3.5% 5% 2%" }}>
+      <H2>{"How Children Reason Before Bayes"}</H2>
+      <Sub>{"Four developmental waves — from random guessing to full integration"}</Sub>
+      <div style={{ flex:1, display:"flex", gap:20, alignItems:"stretch", maxWidth:"92%", alignSelf:"center", justifyContent:"center" }}>
+        {waves.map((w,i)=>(
+          <React.Fragment key={i}>
+            <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"12px 14px", borderTop:"3px solid "+w.color, display:"flex", flexDirection:"column" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+                <span style={{ fontFamily:SANS, fontSize:20, color:w.color, lineHeight:1 }}>{w.icon}</span>
+                <div>
+                  <p style={{ fontFamily:SANS, fontSize:"clamp(8px,0.7vw,9px)", fontWeight:600, textTransform:"uppercase", letterSpacing:"0.08em", color:C.muted, margin:0 }}>Wave {w.num}</p>
+                  <p style={{ fontFamily:SERIF, fontSize:"clamp(13px,1.4vw,18px)", fontWeight:700, color:C.navy, margin:0, lineHeight:1.2 }}>{w.label}</p>
+                </div>
+              </div>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.95vw,12px)", color:C.body, margin:"0 0 4px 0", lineHeight:1.45 }}>{w.desc}</p>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.95vw,12px)", color:C.navy, margin:"0 0 6px 0", lineHeight:1.4, fontStyle:"italic", flex:1 }}>{"e.g. "+w.example}</p>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(8px,0.7vw,9px)", fontWeight:600, color:w.color, margin:0, textTransform:"uppercase", letterSpacing:"0.05em" }}>{"Peak: "+w.peak}</p>
+            </div>
+            {i < 3 && <div style={{ display:"flex", alignItems:"center", color:C.borderDk, fontSize:16, flexShrink:0, margin:"0 -6px" }}>{"→"}</div>}
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+    <SrcBar text="Zhu & Gigerenzer (2006) Figure 5, Tables 2 & 3." />
+    <SlideNum n={6} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S7: Gigerenzer's Conclusion ───────────────────────────────────
+function S7() {
+  return (<Slide dark>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.sageLt, margin:"0 0 28px 0" }}>{"Gigerenzer’s Conclusion"}</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.white, lineHeight:1.35, maxWidth:"85%", margin:"0 0 28px 0" }}>
+        {"The mind is not designed for probabilities,"}
+        <br />
+        {"but it is for "}
+        <em style={{ color:C.sageLt }}>natural frequencies</em>{"."}
+      </h2>
+    </div>
+    <div style={{ padding:"8px 8%", borderTop:"1px solid rgba(255,255,255,0.08)" }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", color:"rgba(255,255,255,0.35)", margin:0, lineHeight:1.5, textAlign:"center" }}>
+        {"This finding was never independently replicated — until Pighin et al. (2017) tried."}
+      </p>
+    </div>
+    <SlideNum n={7} total={TOTAL} dark />
+  </Slide>);
+}
+
+// ── S8: Pighin Transition ─────────────────────────────────────────
+function S8() {
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.magenta, margin:"0 0 28px 0" }}>Pighin, Girotto & Tentori, 2017</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.navy, lineHeight:1.35, maxWidth:"90%", margin:"0 0 28px 0" }}>
+        {"Same task, different country."}
+        <br />
+        {"A new format: "}
+        <em style={{ color:C.magenta }}>number of chances</em>{"."}
+      </h2>
+    </div>
+    <SrcBar text="Pighin, Girotto & Tentori (2017) Psychonomic Bulletin & Review 24(3), 1013–1021." />
+    <SlideNum n={8} total={TOTAL} />
+  </Slide>);
+}
+
+// ── S9: Big Numbers ────────────────────────────────────────────────
+function S9() {
   const stats = [
     { value:"0%",  sub:"with probabilities", detail:"Both studies agree", color:C.navy },
     { value:"70%", sub:"6th graders (China)", detail:"Z&G Study 1, 2006", color:C.sage },
@@ -558,12 +785,12 @@ function S3() {
       </InsightBar>
     </div>
     <SrcBar text={"Z&G (2006) Fig. 3; Pighin et al. (2017) Table 2."} />
-    <SlideNum n={3} total={TOTAL} />
+    <SlideNum n={9} total={TOTAL} />
   </Slide>);
 }
 
-// ── S4: Replication Bar Chart ──────────────────────────────────────
-function S4() {
+// ── S10: Replication Bar Chart ──────────────────────────────────────
+function S10() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"4% 5% 2%" }}>
       <H2>{"The Replication That Wasn\u2019t"}</H2>
@@ -589,12 +816,12 @@ function S4() {
       </InsightBar>
     </div>
     <SrcBar text={"Z&G (2006) Table 1; Pighin et al. (2017) Table 2."} />
-    <SlideNum n={4} total={TOTAL} />
+    <SlideNum n={10} total={TOTAL} />
   </Slide>);
 }
 
-// ── S5: PISA Line Chart ────────────────────────────────────────────
-function S5() {
+// ── S11: PISA Line Chart ────────────────────────────────────────────
+function S11() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", padding:"3.5% 5% 1.5%" }}>
       <div style={{ flex:"0 0 62%", display:"flex", flexDirection:"column", paddingRight:"3%" }}>
@@ -637,12 +864,12 @@ function S5() {
       </div>
     </div>
     <SrcBar text={"OECD PISA Reports 2003\u20132018. PISA is administered every 3 years (no intermediate years exist)."} />
-    <SlideNum n={5} total={TOTAL} />
+    <SlideNum n={11} total={TOTAL} />
   </Slide>);
 }
 
-// ── S6: Design Concerns (visual) ───────────────────────────────────
-function S6() {
+// ── S12: Design Concerns (visual) ───────────────────────────────────
+function S12() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8%", textAlign:"center" }}>
       <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.violet, margin:"0 0 28px 0" }}>The Confound</p>
@@ -655,12 +882,12 @@ function S6() {
       </p>
     </div>
     <SrcBar text="Pighin et al. (2017) flag cultural and methodological confounds." />
-    <SlideNum n={6} total={TOTAL} />
+    <SlideNum n={12} total={TOTAL} />
   </Slide>);
 }
 
-// ── S7: Definitions ────────────────────────────────────────────────
-function S7() {
+// ── S13: Definitions ────────────────────────────────────────────────
+function S13() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"4% 5% 2%" }}>
       <H2>Two Formats, One Number</H2>
@@ -695,12 +922,12 @@ function S7() {
         {"Gigerenzer himself explained that frequencies work because they preserve the base rate in the numbers (no normalization needed). Chances preserve exactly the same structure. His own mechanistic explanation predicts Pighin\u2019s result \u2014 and eliminates the need for an evolutionary module."}
       </InsightBar>
     </div>
-    <SlideNum n={7} total={TOTAL} />
+    <SlideNum n={13} total={TOTAL} />
   </Slide>);
 }
 
-// ── S8: Format vs Question (dynamic insight) ───────────────────────
-function S8() {
+// ── S14: Format vs Question (dynamic insight) ───────────────────────
+function S14() {
   const [q, setQ] = useState("standard");
   const colorMap = { standard:C.violet, distributive:C.teal, relative:C.coral };
   return (<Slide>
@@ -738,12 +965,12 @@ function S8() {
       </InsightBar>
     </div>
     <SrcBar text={"Pighin et al. (2017) Table 5. p-values from Mann-Whitney U tests."} />
-    <SlideNum n={8} total={TOTAL} />
+    <SlideNum n={14} total={TOTAL} />
   </Slide>);
 }
 
-// ── S9: Computational Ladder ───────────────────────────────────────
-function S9() {
+// ── S15: Computational Ladder ───────────────────────────────────────
+function S15() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", padding:"4% 5% 2%" }}>
       <div style={{ flex:"0 0 40%", display:"flex", flexDirection:"column", justifyContent:"center", paddingRight:"4%" }}>
@@ -773,12 +1000,12 @@ function S9() {
       </div>
     </div>
     <SrcBar text="Pighin et al. (2017) Table 5, aggregated across grades and formats." />
-    <SlideNum n={9} total={TOTAL} />
+    <SlideNum n={15} total={TOTAL} />
   </Slide>);
 }
 
-// ── S10: Cognitive Path ────────────────────────────────────────────
-function S10() {
+// ── S16: Cognitive Path ────────────────────────────────────────────
+function S16() {
   const arrow = (thick, color) => ({
     flex:1, maxWidth:140, height:thick?4:2, background:thick?color:C.borderDk, borderRadius:2, position:"relative"
   });
@@ -819,12 +1046,12 @@ function S10() {
       </p>
     </div>
     <SrcBar text={"Pighin et al. (2017) p. 170. Incoherent judgments, binomial test p < 0.01."} />
-    <SlideNum n={10} total={TOTAL} />
+    <SlideNum n={16} total={TOTAL} />
   </Slide>);
 }
 
-// ── S11: Strategy Table ────────────────────────────────────────────
-function S11() {
+// ── S17: Strategy Table ────────────────────────────────────────────
+function S17() {
   const cell = { padding:"10px 14px", fontFamily:SANS, fontSize:"clamp(11px,1.2vw,15px)", borderBottom:"1px solid "+C.border };
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"4% 5% 2%" }}>
@@ -852,12 +1079,12 @@ function S11() {
       </InsightBar>
     </div>
     <SrcBar text={"Pighin et al. (2017) Table 3. Z&G did not disaggregate Joint + Other + Missing."} />
-    <SlideNum n={11} total={TOTAL} />
+    <SlideNum n={17} total={TOTAL} />
   </Slide>);
 }
 
-// ── S12: Debate (chat style, rewritten for clarity) ────────────────
-function S12() {
+// ── S18: Debate (chat style, rewritten for clarity) ────────────────
+function S18() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", padding:"3% 5% 1.5%" }}>
       <H2>The Debate</H2>
@@ -881,12 +1108,12 @@ function S12() {
       </div>
     </div>
     <SrcBar text={"Brase (2018) Psychon Bull Rev; Pighin, Tentori & Girotto (2017) Psychon Bull Rev."} />
-    <SlideNum n={12} total={TOTAL} />
+    <SlideNum n={18} total={TOTAL} />
   </Slide>);
 }
 
-// ── S13: Epistemological Question ──────────────────────────────────
-function S13() {
+// ── S19: Epistemological Question ──────────────────────────────────
+function S19() {
   return (<Slide>
     <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
       <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.violet, margin:"0 0 28px 0" }}>The Epistemological Question</p>
@@ -905,12 +1132,12 @@ function S13() {
         {"Lakatos (1970): a programme is \u201Cdegenerating\u201D when it absorbs counter-evidence via ad hoc modifications instead of generating new testable predictions."}
       </p>
     </div>
-    <SlideNum n={13} total={TOTAL} />
+    <SlideNum n={19} total={TOTAL} />
   </Slide>);
 }
 
-// ── S14: Conclusion ────────────────────────────────────────────────
-function S14() {
+// ── S20: Conclusion ────────────────────────────────────────────────
+function S20() {
   const pts = [
     { accent:C.magenta, key:"Bayesian reasoning requires scaffolding.", rest:" It does not emerge unaided. The 128-point PISA gap (\u2248 3 school years) between Shanghai and Italy shows that format alone cannot explain the difference." },
     { accent:C.teal, key:"Structural clarity beats number format.", rest:" Extensional part-whole relations explain facilitation better than an evolved frequency module. Chances work just as well \u2014 or better." },
@@ -935,12 +1162,12 @@ function S14() {
       {"Sources: Zhu & Gigerenzer (2006) Cognition 98; Pighin et al. (2017) Cognition 168; Brase (2018) & Pighin et al. (2017) Psychon Bull Rev; OECD PISA 2003\u20132018."}
     </div>
     <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
-    <SlideNum n={14} total={TOTAL} dark />
+    <SlideNum n={20} total={TOTAL} dark />
   </Slide>);
 }
 
-// ── S15: Open Question ────────────────────────────────────────────
-function S15() {
+// ── S21: Open Question ────────────────────────────────────────────
+function S21() {
   const dims = [
     { accent:C.teal,    label:"Fewer steps",        left:"15 + 9",                       right:"0.10 \u00D7 0.80 / ..." },
     { accent:C.magenta, label:"Simpler operations",  left:"sum whole numbers",             right:"multiply & divide decimals" },
@@ -975,14 +1202,14 @@ function S15() {
         {"Perhaps no evolutionary module or extensional capacity is needed \u2014 just less demand on working memory."}
       </p>
     </div>
-    <SlideNum n={15} total={TOTAL} />
+    <SlideNum n={21} total={TOTAL} />
   </Slide>);
 }
 
 // ── App ────────────────────────────────────────────────────────────
 function App() {
   const [cur, setCur] = useState(0);
-  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15];
+  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
   const goP = useCallback(()=>setCur(c=>Math.max(0,c-1)),[]);
