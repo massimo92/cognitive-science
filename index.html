@@ -1209,27 +1209,40 @@ function S21() {
 // ── App ────────────────────────────────────────────────────────────
 function App() {
   const [cur, setCur] = useState(0);
+  const [fs, setFs] = useState(false);
   const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
   const goP = useCallback(()=>setCur(c=>Math.max(0,c-1)),[]);
+  const toggleFs = useCallback(()=>{
+    if(!document.fullscreenElement){
+      document.documentElement.requestFullscreen().catch(()=>{});
+    } else {
+      document.exitFullscreen().catch(()=>{});
+    }
+  },[]);
   useEffect(()=>{
     const h=(e)=>{
       if(e.key==="ArrowRight"||e.key==="ArrowDown"){e.preventDefault();goN();}
       if(e.key==="ArrowLeft"||e.key==="ArrowUp"){e.preventDefault();goP();}
+      if(e.key==="f"||e.key==="F"){toggleFs();}
+      if(e.key==="Escape"&&document.fullscreenElement){document.exitFullscreen().catch(()=>{});}
     };
+    const fsc=()=>setFs(!!document.fullscreenElement);
     window.addEventListener("keydown",h);
-    return ()=>window.removeEventListener("keydown",h);
-  },[goN,goP]);
-  return (<div style={{ background:C.cream, minHeight:"100vh", fontFamily:SANS, color:C.body, display:"flex", flexDirection:"column", alignItems:"center", padding:"32px 16px" }}>
-    <div style={{ width:"100%", maxWidth:960 }}>
+    document.addEventListener("fullscreenchange",fsc);
+    return ()=>{window.removeEventListener("keydown",h);document.removeEventListener("fullscreenchange",fsc);};
+  },[goN,goP,toggleFs]);
+  return (<div style={{ background:C.cream, minHeight:"100vh", fontFamily:SANS, color:C.body, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:fs?"center":"flex-start", padding:fs?"16px":"32px 16px" }}>
+    <div style={{ width:"100%", maxWidth:fs?1200:960 }}>
       <SC />
-      <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12 }}>
+      <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, opacity:fs?0:1, transition:"opacity 0.3s", pointerEvents:fs?"none":"auto" }}>
         <NavBtn onClick={goP} disabled={cur===0}>{"\u2190 Prev"}</NavBtn>
         <div style={{ display:"flex", gap:5 }}>
           {slides.map((_,i)=>(<button key={i} onClick={()=>setCur(i)} style={{ width:cur===i?22:8, height:8, borderRadius:4, background:cur===i?C.navy:C.borderDk, border:"none", cursor:"pointer", transition:"all 0.2s ease" }} />))}
         </div>
         <NavBtn onClick={goN} disabled={cur===slides.length-1}>{"Next \u2192"}</NavBtn>
+        <button onClick={toggleFs} style={{ background:"transparent", border:"1px solid "+C.borderDk, borderRadius:6, padding:"8px 12px", cursor:"pointer", fontFamily:SANS, fontSize:13, color:C.navy, marginLeft:8 }} title="Fullscreen (F)">{"\u26f6"}</button>
       </div>
     </div>
   </div>);
