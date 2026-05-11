@@ -333,7 +333,7 @@ const C = {
 };
 const SERIF = "'Georgia','Lora','Times New Roman',serif";
 const SANS  = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans-serif";
-const TOTAL = 21;
+const TOTAL = 22;
 const GR = "linear-gradient(90deg,"+C.sage+","+C.magenta+","+C.amber+")";
 const tipStyle = { background:C.white, border:"1px solid "+C.border, borderRadius:6, padding:"10px 14px", fontFamily:SANS, fontSize:12, color:C.navy, boxShadow:"0 2px 8px rgba(0,0,0,0.08)" };
 
@@ -1206,11 +1206,57 @@ function S21() {
   </Slide>);
 }
 
+// ── S22: Critical Thinking Question ───────────────────────────────
+function S22() {
+  return (<Slide dark>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 28px 0" }}>Closing Question</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.white, lineHeight:1.35, maxWidth:"90%", margin:"0 0 12px 0" }}>
+        {"What should we "}
+        <em style={{ color:C.amber }}>teach</em>
+        {" for critical thinking?"}
+      </h2>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.5vw,18px)", color:C.mutedLt, lineHeight:1.7, maxWidth:"75%", margin:"0 0 44px 0" }}>
+        {"If reasoning depends on how problems are presented, then teaching “how to think” may matter less than teaching “how to frame.”"}
+      </p>
+      {/* Metacognition node */}
+      <div style={{ background:"rgba(192,74,126,0.15)", border:"1px solid "+C.magenta, borderRadius:12, padding:"16px 32px", maxWidth:400, marginBottom:0 }}>
+        <p style={{ fontFamily:SANS, fontSize:"clamp(14px,1.5vw,18px)", fontWeight:700, color:C.white, margin:"0 0 4px 0" }}>Metacognition</p>
+        <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,14px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Know where you are and what you can handle"}</p>
+      </div>
+      {/* Connector lines */}
+      <div style={{ display:"flex", justifyContent:"center", alignItems:"stretch", width:280, height:36 }}>
+        <div style={{ flex:1, borderRight:"1px solid "+C.mutedLt, borderBottom:"1px solid "+C.mutedLt, borderRadius:"0 0 0 0" }} />
+        <div style={{ flex:1, borderLeft:"1px solid "+C.mutedLt, borderBottom:"1px solid "+C.mutedLt, borderRadius:"0 0 0 0" }} />
+      </div>
+      <div style={{ display:"flex", justifyContent:"center", width:280, height:20 }}>
+        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:"100%", background:C.mutedLt }} /></div>
+        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:"100%", background:C.mutedLt }} /></div>
+      </div>
+      {/* Two branches */}
+      <div style={{ display:"flex", gap:32, justifyContent:"center", maxWidth:"90%" }}>
+        <div style={{ flex:1, maxWidth:280, background:"rgba(91,138,114,0.12)", border:"1px solid "+C.sage, borderRadius:12, padding:"16px 20px", textAlign:"center" }}>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.sage, margin:"0 0 6px 0", fontWeight:600 }}>{"Heuristic is reliable →"}</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.3vw,16px)", fontWeight:700, color:C.white, margin:"0 0 6px 0" }}>Ecological awareness</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Trust it — not all biases are bugs. Know when fast thinking works."}</p>
+        </div>
+        <div style={{ flex:1, maxWidth:280, background:"rgba(196,154,60,0.12)", border:"1px solid "+C.amber, borderRadius:12, padding:"16px 20px", textAlign:"center" }}>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.amber, margin:"0 0 6px 0", fontWeight:600 }}>{"Heuristic is unreliable →"}</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.3vw,16px)", fontWeight:700, color:C.white, margin:"0 0 6px 0" }}>Problem reframing</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Redefine the question and solve it in a format that reduces cognitive load."}</p>
+        </div>
+      </div>
+    </div>
+    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
+    <SlideNum n={22} total={TOTAL} dark />
+  </Slide>);
+}
+
 // ── App ────────────────────────────────────────────────────────────
 function App() {
   const [cur, setCur] = useState(0);
   const [fs, setFs] = useState(false);
-  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21];
+  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
   const goP = useCallback(()=>setCur(c=>Math.max(0,c-1)),[]);
