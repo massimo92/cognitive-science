@@ -333,9 +333,11 @@ const C = {
 };
 const SERIF = "'Georgia','Lora','Times New Roman',serif";
 const SANS  = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans-serif";
-const TOTAL = 22;
+const TOTAL = 28;
 const GR = "linear-gradient(90deg,"+C.sage+","+C.magenta+","+C.amber+")";
-const tipStyle = { background:C.white, border:"1px solid "+C.border, borderRadius:6, padding:"10px 14px", fontFamily:SANS, fontSize:12, color:C.navy, boxShadow:"0 2px 8px rgba(0,0,0,0.08)" };
+
+const ZHU_PHOTO = "data:image/jpeg;base64,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";
+const PIGHIN_PHOTO = "data:image/jpeg;base64,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";const tipStyle = { background:C.white, border:"1px solid "+C.border, borderRadius:6, padding:"10px 14px", fontFamily:SANS, fontSize:12, color:C.navy, boxShadow:"0 2px 8px rgba(0,0,0,0.08)" };
 
 // ── Data ───────────────────────────────────────────────────────────
 const replicationData = [
@@ -526,7 +528,7 @@ function S2() {
         <FlipCard faces={freqFaces} color={C.sage} />
       </div>
     </div>
-    <SlideNum n={2} total={TOTAL} />
+    <SlideNum n={5} total={TOTAL} />
   </Slide>);
 }
 
@@ -548,7 +550,7 @@ function S3() {
       </p>
     </div>
     <SrcBar text="Zhu & Gigerenzer (2006) Cognition 98(3), 287–308." />
-    <SlideNum n={3} total={TOTAL} />
+    <SlideNum n={6} total={TOTAL} />
   </Slide>);
 }
 
@@ -569,7 +571,8 @@ function S4() {
       <Sub>{"Two studies, same school in Beijing. Children had never been taught probability."}</Sub>
       <div style={{ display:"flex", gap:"3.5%", flex:1, alignItems:"stretch" }}>
         <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.sage, display:"flex", flexDirection:"column" }}>
-          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sage, margin:"0 0 12px 0" }}>Study 1 — 7 problems</p>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sage, margin:"0 0 6px 0" }}>Study 1 — 7 problems</p>
+          <p style={{ fontFamily:SERIF, fontSize:"clamp(11px,1.15vw,14px)", color:C.sage, margin:"0 0 10px 0", lineHeight:1.45, fontWeight:600 }}>Can children solve Bayesian problems with natural frequencies?</p>
           <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies only", C.sage)}</p>
           {row("4th graders", "16")}
           {row("5th graders", "15")}
@@ -586,7 +589,8 @@ function S4() {
           </div>
         </div>
         <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.sageLt, display:"flex", flexDirection:"column" }}>
-          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sageLt, margin:"0 0 12px 0" }}>Study 2 — 10 problems</p>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.sageLt, margin:"0 0 6px 0" }}>Study 2 — 10 problems</p>
+          <p style={{ fontFamily:SERIF, fontSize:"clamp(11px,1.15vw,14px)", color:C.sageLt, margin:"0 0 10px 0", lineHeight:1.45, fontWeight:600 }}>Is the frequency advantage innate? What happens with probabilities?</p>
           <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies", C.sage)} {formatTag("probabilities", C.amber)}</p>
           {row("Frequencies group", "30 (10 per grade)")}
           {row("Probabilities group", "30 (10 per grade)")}
@@ -604,7 +608,7 @@ function S4() {
       </div>
     </div>
     <SrcBar text="Zhu & Gigerenzer (2006) Method, pp. 5–6." />
-    <SlideNum n={4} total={TOTAL} />
+    <SlideNum n={7} total={TOTAL} />
   </Slide>);
 }
 
@@ -678,7 +682,7 @@ function S5() {
       </div>
     </div>
     <SrcBar text="Zhu & Gigerenzer (2006) Figures 2 & 3." />
-    <SlideNum n={5} total={TOTAL} />
+    <SlideNum n={8} total={TOTAL} />
   </Slide>);
 }
 
@@ -715,7 +719,7 @@ function S6() {
       </div>
     </div>
     <SrcBar text="Zhu & Gigerenzer (2006) Figure 5, Tables 2 & 3." />
-    <SlideNum n={6} total={TOTAL} />
+    <SlideNum n={9} total={TOTAL} />
   </Slide>);
 }
 
@@ -736,7 +740,7 @@ function S7() {
         {"This finding was never independently replicated — until Pighin et al. (2017) tried."}
       </p>
     </div>
-    <SlideNum n={7} total={TOTAL} dark />
+    <SlideNum n={10} total={TOTAL} dark />
   </Slide>);
 }
 
@@ -753,7 +757,7 @@ function S8() {
       </h2>
     </div>
     <SrcBar text="Pighin, Girotto & Tentori (2017) Psychonomic Bulletin & Review 24(3), 1013–1021." />
-    <SlideNum n={8} total={TOTAL} />
+    <SlideNum n={11} total={TOTAL} />
   </Slide>);
 }
 
@@ -785,7 +789,7 @@ function S9() {
       </InsightBar>
     </div>
     <SrcBar text={"Z&G (2006) Fig. 3; Pighin et al. (2017) Table 2."} />
-    <SlideNum n={9} total={TOTAL} />
+    <SlideNum n={13} total={TOTAL} />
   </Slide>);
 }
 
@@ -816,7 +820,7 @@ function S10() {
       </InsightBar>
     </div>
     <SrcBar text={"Z&G (2006) Table 1; Pighin et al. (2017) Table 2."} />
-    <SlideNum n={10} total={TOTAL} />
+    <SlideNum n={14} total={TOTAL} />
   </Slide>);
 }
 
@@ -864,7 +868,7 @@ function S11() {
       </div>
     </div>
     <SrcBar text={"OECD PISA Reports 2003\u20132018. PISA is administered every 3 years (no intermediate years exist)."} />
-    <SlideNum n={11} total={TOTAL} />
+    <SlideNum n={15} total={TOTAL} />
   </Slide>);
 }
 
@@ -882,7 +886,7 @@ function S12() {
       </p>
     </div>
     <SrcBar text="Pighin et al. (2017) flag cultural and methodological confounds." />
-    <SlideNum n={12} total={TOTAL} />
+    <SlideNum n={16} total={TOTAL} />
   </Slide>);
 }
 
@@ -922,7 +926,7 @@ function S13() {
         {"Gigerenzer himself explained that frequencies work because they preserve the base rate in the numbers (no normalization needed). Chances preserve exactly the same structure. His own mechanistic explanation predicts Pighin\u2019s result \u2014 and eliminates the need for an evolutionary module."}
       </InsightBar>
     </div>
-    <SlideNum n={13} total={TOTAL} />
+    <SlideNum n={17} total={TOTAL} />
   </Slide>);
 }
 
@@ -965,7 +969,7 @@ function S14() {
       </InsightBar>
     </div>
     <SrcBar text={"Pighin et al. (2017) Table 5. p-values from Mann-Whitney U tests."} />
-    <SlideNum n={14} total={TOTAL} />
+    <SlideNum n={18} total={TOTAL} />
   </Slide>);
 }
 
@@ -1000,7 +1004,7 @@ function S15() {
       </div>
     </div>
     <SrcBar text="Pighin et al. (2017) Table 5, aggregated across grades and formats." />
-    <SlideNum n={15} total={TOTAL} />
+    <SlideNum n={19} total={TOTAL} />
   </Slide>);
 }
 
@@ -1046,7 +1050,7 @@ function S16() {
       </p>
     </div>
     <SrcBar text={"Pighin et al. (2017) p. 170. Incoherent judgments, binomial test p < 0.01."} />
-    <SlideNum n={16} total={TOTAL} />
+    <SlideNum n={20} total={TOTAL} />
   </Slide>);
 }
 
@@ -1079,7 +1083,7 @@ function S17() {
       </InsightBar>
     </div>
     <SrcBar text={"Pighin et al. (2017) Table 3. Z&G did not disaggregate Joint + Other + Missing."} />
-    <SlideNum n={17} total={TOTAL} />
+    <SlideNum n={21} total={TOTAL} />
   </Slide>);
 }
 
@@ -1108,7 +1112,7 @@ function S18() {
       </div>
     </div>
     <SrcBar text={"Brase (2018) Psychon Bull Rev; Pighin, Tentori & Girotto (2017) Psychon Bull Rev."} />
-    <SlideNum n={18} total={TOTAL} />
+    <SlideNum n={22} total={TOTAL} />
   </Slide>);
 }
 
@@ -1132,7 +1136,7 @@ function S19() {
         {"Lakatos (1970): a programme is \u201Cdegenerating\u201D when it absorbs counter-evidence via ad hoc modifications instead of generating new testable predictions."}
       </p>
     </div>
-    <SlideNum n={19} total={TOTAL} />
+    <SlideNum n={23} total={TOTAL} />
   </Slide>);
 }
 
@@ -1162,7 +1166,7 @@ function S20() {
       {"Sources: Zhu & Gigerenzer (2006) Cognition 98; Pighin et al. (2017) Cognition 168; Brase (2018) & Pighin et al. (2017) Psychon Bull Rev; OECD PISA 2003\u20132018."}
     </div>
     <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
-    <SlideNum n={20} total={TOTAL} dark />
+    <SlideNum n={24} total={TOTAL} dark />
   </Slide>);
 }
 
@@ -1202,7 +1206,7 @@ function S21() {
         {"Perhaps no evolutionary module or extensional capacity is needed \u2014 just less demand on working memory."}
       </p>
     </div>
-    <SlideNum n={21} total={TOTAL} />
+    <SlideNum n={27} total={TOTAL} />
   </Slide>);
 }
 
@@ -1250,7 +1254,392 @@ function S22() {
       </div>
     </div>
     <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
-    <SlideNum n={22} total={TOTAL} />
+    <SlideNum n={28} total={TOTAL} />
+  </Slide>);
+}
+
+// ── NEW: Authors ──────────────────────────────────────────────────
+function SAuthors() {
+  var bullet = function(text) {
+    return (<div style={{ display:"flex", gap:10, marginBottom:8 }}>
+      <span style={{ color:C.muted, flexShrink:0, fontSize:"clamp(12px,1.2vw,15px)" }}>{"•"}</span>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.2vw,15px)", color:C.body, margin:0, lineHeight:1.6 }}>{text}</p>
+    </div>);
+  };
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", padding:"3% 5% 2%" }}>
+      <H2>The Researchers</H2>
+      <Sub>Two teams, two countries, one question</Sub>
+      <div style={{ display:"flex", gap:"3%", flex:1, alignItems:"stretch" }}>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"20px 24px", borderTop:"3px solid "+C.sage, display:"flex", flexDirection:"column" }}>
+          <div style={{ display:"flex", alignItems:"center", gap:16, marginBottom:16 }}>
+            <img src={ZHU_PHOTO} style={{ width:72, height:72, borderRadius:36, objectFit:"cover", flexShrink:0 }} alt="Zhu Liqi" />
+            <div>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(16px,1.6vw,20px)", fontWeight:700, color:C.navy, margin:"0 0 3px 0" }}>Zhu Liqi</p>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1.1vw,14px)", color:C.muted, margin:0 }}>Institute of Psychology, CAS (Beijing)</p>
+            </div>
+          </div>
+          {bullet("Ph.D. in Developmental Psychology. Professor at the Chinese Academy of Sciences.")}
+          {bullet("Known for studying how children develop reasoning, fairness, and social cognition across cultures.")}
+          {bullet("Key publication: \"Children can solve Bayesian problems\" (Cognition, 2006) with Gigerenzer.")}
+          {bullet("Associate Editor of Child Development. 100+ publications.")}
+        </div>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"20px 24px", borderTop:"3px solid "+C.magenta, display:"flex", flexDirection:"column" }}>
+          <div style={{ display:"flex", alignItems:"center", gap:16, marginBottom:16 }}>
+            <img src={PIGHIN_PHOTO} style={{ width:72, height:72, borderRadius:36, objectFit:"cover", flexShrink:0 }} alt="Stefania Pighin" />
+            <div>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(16px,1.6vw,20px)", fontWeight:700, color:C.navy, margin:"0 0 3px 0" }}>Stefania Pighin</p>
+              <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1.1vw,14px)", color:C.muted, margin:0 }}>CIMeC, University of Trento (Italy)</p>
+            </div>
+          </div>
+          {bullet("Ph.D. in Cognitive Science and Education. Associate Professor at CIMeC.")}
+          {bullet("Known for challenging the frequency hypothesis: natural frequencies do not reliably facilitate Bayesian reasoning.")}
+          {bullet("Key publication: \"Children's quantitative Bayesian inferences\" (Cognition, 2017) with Girotto & Tentori.")}
+          {bullet("Research focus: judgment and decision-making, probabilistic reasoning, mental simulation.")}
+        </div>
+      </div>
+    </div>
+    <SlideNum n={2} total={TOTAL} />
+  </Slide>);
+}
+
+// ── NEW: Structure ───────────────────────────────────────────────
+function SMainQuestion() {
+  return (<Slide dark>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"6% 10%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 20px 0" }}>The central question</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3vw,40px)", fontWeight:700, color:C.white, lineHeight:1.4, maxWidth:"90%", margin:0 }}>
+        {"Does it make sense to "}
+        <em style={{ color:C.amber }}>teach</em>
+        {" critical thinking, or is the way we reason simply "}
+        <em style={{ color:C.sage }}>innate</em>
+        {" and unfolds with brain maturation?"}
+      </h2>
+    </div>
+    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
+    <SlideNum n={3} total={TOTAL} dark />
+  </Slide>);
+}
+
+function SStructure() {
+  var steps = [
+    { color:C.sage, num:"1", title:"Zhu & Gigerenzer (2006)", desc:"Do children reason Bayesianly with natural frequencies?" },
+    { color:C.sage, num:"2", title:"Cognitive strategies", desc:"What errors reveal about developing reasoning" },
+    { color:C.magenta, num:"3", title:"Pighin et al. (2017)", desc:"Replication in Italy and extension with new formats" },
+    { color:C.amber, num:"4", title:"The debate", desc:"Format vs. question vs. scaffolding" },
+    { color:C.navy, num:"5", title:"Critical thinking", desc:"What should we teach?" },
+  ];
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", padding:"4% 7%" }}>
+      <H2>Roadmap</H2>
+      <Sub>Structure of this presentation</Sub>
+      <div style={{ display:"flex", flexDirection:"column", gap:0, marginTop:12 }}>
+        {steps.map(function(s,i){return (
+          <div key={i}>
+            <div style={{ display:"flex", alignItems:"center", gap:20 }}>
+              <div style={{ display:"flex", flexDirection:"column", alignItems:"center", flexShrink:0 }}>
+                <div style={{ width:46, height:46, borderRadius:23, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:SANS, fontSize:19, fontWeight:700, color:C.white }}>{s.num}</div>
+              </div>
+              <div>
+                <p style={{ fontFamily:SANS, fontSize:"clamp(15px,1.6vw,20px)", fontWeight:700, color:C.navy, margin:"0 0 3px 0" }}>{s.title}</p>
+                <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.3vw,16px)", color:C.muted, margin:0 }}>{s.desc}</p>
+              </div>
+            </div>
+            {i<steps.length-1 && <div style={{ width:2, height:14, background:C.border, marginLeft:22 }} />}
+          </div>
+        );})}
+      </div>
+    </div>
+    <SlideNum n={4} total={TOTAL} />
+  </Slide>);
+}
+
+// ── NEW: Pighin Design ───────────────────────────────────────────
+function SPighinDesign() {
+  var row = function(label, value) {
+    return (
+      <div style={{ display:"flex", justifyContent:"space-between", padding:"5px 0", borderBottom:"1px solid "+C.border }}>
+        <span style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.muted }}>{label}</span>
+        <span style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.navy, fontWeight:600 }}>{value}</span>
+      </div>
+    );
+  };
+  var formatTag = function(text, color) {
+    return (
+      <span style={{ display:"inline-block", background:color+"20", color:color, fontFamily:SANS, fontSize:"clamp(9px,0.85vw,11px)", fontWeight:600, padding:"2px 8px", borderRadius:4, marginRight:4 }}>{text}</span>
+    );
+  };
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", padding:"3.5% 6% 2%" }}>
+      <H2>Pighin's Design</H2>
+      <Sub>Two experiments in north-east Italy. Children from ordinary elementary schools.</Sub>
+      <div style={{ display:"flex", gap:"3.5%", flex:1, alignItems:"stretch" }}>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.magenta, display:"flex", flexDirection:"column" }}>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.magenta, margin:"0 0 6px 0" }}>Experiment 1 — 5 problems</p>
+          <p style={{ fontFamily:SERIF, fontSize:"clamp(11px,1.15vw,14px)", color:C.magenta, margin:"0 0 10px 0", lineHeight:1.45, fontWeight:600 }}>{"Can Z&G's results be replicated with Italian children?"}</p>
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies only", C.sage)}</p>
+          {row("4th graders", "34")}
+          {row("5th graders", "43")}
+          {row("6th graders", "43")}
+          <div style={{ flex:1 }} />
+          <div style={{ background:C.white, borderRadius:6, padding:"8px 12px", marginTop:10 }}>
+            <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.9vw,11px)", color:C.muted, margin:0, lineHeight:1.45, fontStyle:"italic" }}>
+              Direct replication of Z&G. Subset of 5 problems selected via pilot (40 US adults, AMT). 30 min limit.
+            </p>
+          </div>
+        </div>
+        <div style={{ flex:1, background:C.cream, borderRadius:8, padding:"16px 20px", borderTop:"3px solid "+C.coral, display:"flex", flexDirection:"column" }}>
+          <p style={{ fontFamily:SANS, fontSize:12, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.06em", color:C.coral, margin:"0 0 6px 0" }}>Experiment 2 — 4 problems</p>
+          <p style={{ fontFamily:SERIF, fontSize:"clamp(11px,1.15vw,14px)", color:C.coral, margin:"0 0 10px 0", lineHeight:1.45, fontWeight:600 }}>Is it the format (frequencies vs. chances) or the question type?</p>
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Children {formatTag("frequencies", C.sage)} {formatTag("chances", C.amber)}</p>
+          {row("4th graders", "43")}
+          {row("5th graders", "51")}
+          {row("6th graders", "65")}
+          <div style={{ height:6 }} />
+          <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.muted, margin:"0 0 4px 0", textTransform:"uppercase", letterSpacing:"0.05em" }}>Question types</p>
+          {row("Standard", "How many of X are Y?")}
+          {row("Distributive", "Of X: ___ are Y, ___ are not Y")}
+          {row("Relative", "More likely Y or not Y?")}
+          <div style={{ flex:1 }} />
+          <div style={{ background:C.white, borderRadius:6, padding:"8px 12px", marginTop:10 }}>
+            <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.9vw,11px)", color:C.muted, margin:0, lineHeight:1.45, fontStyle:"italic" }}>
+              Simplified problems: base rate omitted, pr(E) and likelihoods given explicitly. Random format assignment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <SrcBar text="Pighin et al. (2017) Cognition 168, pp. 166-169." />
+    <SlideNum n={12} total={TOTAL} />
+  </Slide>);
+}
+
+// ── NEW: Frequencies Limitation ──────────────────────────────────
+function SFreqLimit() {
+  var Glass = function(props) {
+    var pct = props.pct; var color = props.color; var label = props.label; var sub = props.sub; var detail = props.detail;
+    return (<div style={{ flex:1, textAlign:"center", maxWidth:200 }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.4vw,17px)", fontWeight:700, color:color, margin:"0 0 4px 0" }}>{label}</p>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.mutedLt, margin:"0 0 14px 0" }}>{sub}</p>
+      {/* Glass container */}
+      <div style={{ width:80, height:160, margin:"0 auto", border:"2px solid rgba(255,255,255,0.25)", borderTop:"none", borderRadius:"0 0 12px 12px", position:"relative", overflow:"hidden", background:"rgba(255,255,255,0.04)" }}>
+        {/* Fill level */}
+        <div style={{ position:"absolute", bottom:0, left:0, right:0, height:pct+"%", background:color, opacity:0.7, borderRadius:"0 0 10px 10px", transition:"height 0.6s ease" }} />
+        {/* Level line */}
+        <div style={{ position:"absolute", bottom:pct+"%", left:0, right:0, height:2, background:color }} />
+        {/* Percentage label inside */}
+        <div style={{ position:"absolute", bottom:pct+"%", left:"50%", transform:"translate(-50%, -20px)", fontFamily:SANS, fontSize:13, fontWeight:700, color:C.white }}>{pct+"%"}</div>
+      </div>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.mutedLt, margin:"10px 0 0 0", lineHeight:1.4 }}>{detail}</p>
+    </div>);
+  };
+  return (<Slide dark>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"3% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 20px 0" }}>A Practical Implication</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(20px,2.8vw,36px)", fontWeight:700, color:C.white, lineHeight:1.35, maxWidth:"90%", margin:"0 0 10px 0" }}>
+        Frequencies work for <em style={{ color:C.sage }}>small</em> numbers.
+        <br/>
+        {"For large or complex ones, use "}
+        <em style={{ color:C.amber }}>probabilities</em>.
+      </h2>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.3vw,16px)", color:C.mutedLt, lineHeight:1.6, maxWidth:"75%", margin:"0 0 28px 0" }}>
+        {"Think of a percentage as a fill level: no matter the size of the glass, 47% full looks and feels the same."}
+      </p>
+      <div style={{ display:"flex", gap:40, justifyContent:"center", alignItems:"flex-start", maxWidth:"90%" }}>
+        {/* Waffle: 8 out of 17 */}
+        <div style={{ flex:1, textAlign:"center", maxWidth:200 }}>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.4vw,17px)", fontWeight:700, color:C.sage, margin:"0 0 4px 0" }}>8 out of 17</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,1vw,13px)", color:C.mutedLt, margin:"0 0 14px 0" }}>Natural frequency</p>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(5, 26px)", gap:5, justifyContent:"center" }}>
+            {Array.from({length:17}).map(function(_,i){
+              var on = i < 8;
+              return <div key={i} style={{ width:26, height:26, borderRadius:4, background:on ? C.sage : "rgba(255,255,255,0.22)", border:on ? "none" : "1px solid rgba(255,255,255,0.35)", opacity:on?0.85:1, transition:"background 0.3s ease" }} />;
+            })}
+          </div>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.mutedLt, margin:"10px 0 0 0", lineHeight:1.4 }}>Easy to count</p>
+        </div>
+        <div style={{ display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", alignSelf:"center", padding:"0 4px", marginTop:60 }}>
+          <p style={{ fontFamily:SANS, fontSize:22, color:C.mutedLt, margin:0 }}>=</p>
+        </div>
+        {/* Glass: 47% */}
+        <Glass pct={47} color={C.amber} label="47%" sub="Probability" detail="Same info, any scale" />
+      </div>
+    </div>
+    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
+    <SlideNum n={25} total={TOTAL} dark />
+  </Slide>);
+}
+
+// ── SBayesGlass: Pour & Rescale Bayesian Reasoning ───────────────
+function SBayesGlass() {
+  var _bs = useState(0);
+  var step = _bs[0]; var setStep = _bs[1];
+  var advance = function(e){ e.stopPropagation(); setStep(function(s){ return Math.min(s + 1, 3); }); };
+  var reset = function(e){ e.stopPropagation(); setStep(0); };
+
+  var PH = 180;
+  var LH = Math.round(PH * 0.10);
+  var HH = Math.round(PH * 0.90);
+  var GW = 50;
+  var RN = "#c04a7e";
+
+  var btnS = { fontFamily:SANS, fontSize:12, fontWeight:600, background:C.navy, color:C.white, border:"none", borderRadius:8, padding:"7px 18px", cursor:"pointer" };
+  var btnDim = { fontFamily:SANS, fontSize:11, fontWeight:600, background:C.muted, color:C.white, border:"none", borderRadius:8, padding:"6px 16px", cursor:"pointer" };
+
+  var subs = [
+    "In a town of 100, 10% are liars (dense liquid) and 90% are honest (light liquid).",
+    "Each liquid is poured into its own glass. The glass height equals the group size.",
+    "Apply the red-nose test. Within each glass, the liquid separates: red-nose (detected) vs normal-nose.",
+    "Compare the red-nose portions. The honest glass has more red-nose liquid!"
+  ];
+
+  // Fixed-height label row so glasses never shift
+  var lblH = 28; // space for two lines of labels below each glass
+
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"1.5% 4% 1%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 4px 0" }}>Visual Bayesian Reasoning</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(15px,1.9vw,23px)", fontWeight:700, color:C.navy, lineHeight:1.3, margin:"0 0 3px 0" }}>
+        The Liar Problem — pour & rescale
+      </h2>
+      <div style={{ height:32, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 0 10px 0" }}>
+        <p style={{ fontFamily:SANS, fontSize:"clamp(9px,0.95vw,12px)", color:C.body, margin:0, lineHeight:1.45, maxWidth:"88%", textAlign:"center" }}>
+          {subs[step]}
+        </p>
+      </div>
+
+      {/* Main content: glasses centered, callout absolutely positioned */}
+      <div style={{ position:"relative", width:"100%" }}>
+
+        {/* ── Glasses area (always same size, always centered) ── */}
+        <div style={{ display:"flex", alignItems:"flex-end", justifyContent:"center", gap:20 }}>
+
+          {/* POPULATION GLASS */}
+          <div style={{ textAlign:"center", transition:"opacity 0.5s", opacity: step === 0 ? 1 : 0.25 }}>
+            <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.navy, margin:"0 0 3px 0" }}>Population</p>
+            <div style={{ height:PH, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+              <div style={{ width:GW, height:PH, border:"2px solid "+C.borderDk, borderTop:"none", borderRadius:"0 0 10px 10px", position:"relative", overflow:"hidden", background:"rgba(0,0,0,0.02)" }}>
+                {step === 0 && (
+                  <React.Fragment>
+                    <div style={{ position:"absolute", bottom:"10%", left:0, right:0, height:"90%", background:C.amber, opacity:0.35 }} />
+                    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"10%", background:C.sage, opacity:0.65, borderRadius:"0 0 8px 8px" }} />
+                    <div style={{ position:"absolute", bottom:"10%", left:0, right:0, height:1.5, background:C.navy, opacity:0.15 }} />
+                    <div style={{ position:"absolute", top:"30%", left:"50%", transform:"translateX(-50%)", fontFamily:SANS, fontSize:9, color:C.amber, fontWeight:600, opacity:0.8 }}>90%</div>
+                    <div style={{ position:"absolute", bottom:"0.5%", left:"50%", transform:"translateX(-50%)", fontFamily:SANS, fontSize:8, color:C.white, fontWeight:600 }}>10%</div>
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
+            <div style={{ height:lblH }}>
+              <p style={{ fontFamily:SANS, fontSize:9, color:C.muted, margin:"3px 0 0 0" }}>100</p>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div style={{ fontFamily:SANS, fontSize:14, color:C.muted, alignSelf:"center" }}>{"→"}</div>
+
+          {/* LIARS GLASS */}
+          <div style={{ textAlign:"center" }}>
+            <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.sage, margin:"0 0 3px 0" }}>Liars</p>
+            <div style={{ height:PH, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+              <div style={{ width:GW, height:LH, border: step >= 1 ? "2px solid "+C.sage : "2px dashed "+C.border, borderTop:"none", borderRadius:"0 0 6px 6px", position:"relative", overflow:"hidden", background: step >= 1 ? "rgba(0,0,0,0.02)" : "transparent", transition:"border 0.5s" }}>
+                {step === 1 && (
+                  <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"100%", background:C.sage, opacity:0.55, borderRadius:"0 0 4px 4px" }} />
+                )}
+                {step >= 2 && (
+                  <React.Fragment>
+                    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"80%", background:RN, opacity: step===3 ? 0.9 : 0.65, borderRadius:"0 0 4px 4px", transition:"opacity 0.5s" }} />
+                    <div style={{ position:"absolute", bottom:"80%", left:0, right:0, height:"20%", background:C.sage, opacity: step===3 ? 0.12 : 0.45, transition:"opacity 0.5s" }} />
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
+            <div style={{ height:lblH }}>
+              <p style={{ fontFamily:SANS, fontSize:9, color:C.sage, margin:"3px 0 0 0", fontWeight:600 }}>10 people</p>
+              <p style={{ fontFamily:SANS, fontSize:9, color:RN, margin:"1px 0 0 0", fontWeight:600, visibility: step >= 2 ? "visible" : "hidden" }}>{"80% red = 8"}</p>
+            </div>
+          </div>
+
+          {/* HONEST GLASS */}
+          <div style={{ textAlign:"center" }}>
+            <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.amber, margin:"0 0 3px 0" }}>Honest</p>
+            <div style={{ height:PH, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+              <div style={{ width:GW, height:HH, border: step >= 1 ? "2px solid "+C.amber : "2px dashed "+C.border, borderTop:"none", borderRadius:"0 0 10px 10px", position:"relative", overflow:"hidden", background: step >= 1 ? "rgba(0,0,0,0.02)" : "transparent", transition:"border 0.5s" }}>
+                {step === 1 && (
+                  <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"100%", background:C.amber, opacity:0.35 }} />
+                )}
+                {step >= 2 && (
+                  <React.Fragment>
+                    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"10%", background:RN, opacity: step===3 ? 0.9 : 0.65, borderRadius:"0 0 8px 8px", transition:"opacity 0.5s" }} />
+                    <div style={{ position:"absolute", bottom:"10%", left:0, right:0, height:"90%", background:C.amber, opacity: step===3 ? 0.12 : 0.3, transition:"opacity 0.5s" }} />
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
+            <div style={{ height:lblH }}>
+              <p style={{ fontFamily:SANS, fontSize:9, color:C.amber, margin:"3px 0 0 0", fontWeight:600 }}>90 people</p>
+              <p style={{ fontFamily:SANS, fontSize:9, color:RN, margin:"1px 0 0 0", fontWeight:600, visibility: step >= 2 ? "visible" : "hidden" }}>{"10% red = 9"}</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ── Step 3: callout absolutely positioned on the right ── */}
+        {step === 3 && (
+          <div style={{ position:"absolute", right:0, top:"50%", transform:"translateY(-50%)", background:"rgba(192,74,126,0.06)", border:"1px solid rgba(192,74,126,0.25)", borderRadius:10, padding:"14px 22px", maxWidth:220, textAlign:"left" }}>
+            <p style={{ fontFamily:SANS, fontSize:10, fontWeight:600, color:C.navy, margin:"0 0 6px 0" }}>Total red-noses</p>
+            <div style={{ display:"flex", alignItems:"baseline", gap:4, margin:"0 0 8px 0" }}>
+              <span style={{ fontFamily:SANS, fontSize:16, fontWeight:700, color:C.sage }}>8</span>
+              <span style={{ fontFamily:SANS, fontSize:11, color:C.muted }}>real +</span>
+              <span style={{ fontFamily:SANS, fontSize:16, fontWeight:700, color:C.amber }}>9</span>
+              <span style={{ fontFamily:SANS, fontSize:11, color:C.muted }}>false</span>
+            </div>
+            <div style={{ width:"100%", height:1, background:"rgba(192,74,126,0.2)", margin:"0 0 8px 0" }} />
+            <p style={{ fontFamily:SERIF, fontSize:20, fontWeight:700, color:RN, margin:"0 0 4px 0" }}>
+              {"P(liar | red) = 8/17"}
+            </p>
+            <p style={{ fontFamily:SERIF, fontSize:26, fontWeight:700, color:RN, margin:"0 0 6px 0" }}>
+              {"≈ 47%"}
+            </p>
+            <p style={{ fontFamily:SANS, fontSize:9, color:C.body, margin:0, lineHeight:1.4 }}>
+              {"The base rate matters: 10% of a huge glass > 80% of a tiny glass."}
+            </p>
+          </div>
+        )}
+
+      </div>
+
+      {/* Legend */}
+      <div style={{ display:"flex", gap:12, margin:"6px 0 0 0" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:3 }}>
+          <div style={{ width:8, height:8, borderRadius:2, background:C.sage, opacity:0.65 }} />
+          <span style={{ fontFamily:SANS, fontSize:9, color:C.muted }}>Liars</span>
+        </div>
+        <div style={{ display:"flex", alignItems:"center", gap:3 }}>
+          <div style={{ width:8, height:8, borderRadius:2, background:C.amber, opacity:0.45 }} />
+          <span style={{ fontFamily:SANS, fontSize:9, color:C.muted }}>Honest</span>
+        </div>
+        {step >= 2 && (
+          <div style={{ display:"flex", alignItems:"center", gap:3 }}>
+            <div style={{ width:8, height:8, borderRadius:2, background:RN, opacity:0.7 }} />
+            <span style={{ fontFamily:SANS, fontSize:9, color:C.muted }}>Red-nose (+)</span>
+          </div>
+        )}
+      </div>
+
+      {/* Navigation button — constant margin */}
+      <div style={{ marginTop:12 }}>
+        {step < 3 ? (
+          <button style={btnS} onClick={advance}>
+            {step === 0 ? "Pour →" : step === 1 ? "Apply red-nose test →" : "Compare red-noses →"}
+          </button>
+        ) : (
+          <button style={btnDim} onClick={reset}>{"↺ Replay"}</button>
+        )}
+      </div>
+    </div>
+    <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
+    <SlideNum n={26} total={TOTAL} />
   </Slide>);
 }
 
@@ -1259,7 +1648,7 @@ function App() {
   const [cur, setCur] = useState(0);
   const [fs, setFs] = useState(false);
   const [scale, setScale] = useState(1);
-  const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22];
+  const slides = [S1,SAuthors,SMainQuestion,SStructure,S2,S3,S4,S5,S6,S7,S8,SPighinDesign,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,SFreqLimit,SBayesGlass,S21,S22];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
   const goP = useCallback(()=>setCur(c=>Math.max(0,c-1)),[]);
