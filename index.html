@@ -1208,47 +1208,49 @@ function S21() {
 
 // ── S22: Critical Thinking Question ───────────────────────────────
 function S22() {
-  return (<Slide dark>
-    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"4% 8% 2%", textAlign:"center" }}>
-      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 28px 0" }}>Closing Question</p>
-      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(22px,3.2vw,42px)", fontWeight:700, color:C.white, lineHeight:1.35, maxWidth:"90%", margin:"0 0 12px 0" }}>
+  return (<Slide>
+    <div style={{ flex:1, display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"3% 8% 2%", textAlign:"center" }}>
+      <p style={{ fontFamily:SANS, fontSize:11, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.12em", color:C.amber, margin:"0 0 12px 0" }}>Closing Question</p>
+      <h2 style={{ fontFamily:SERIF, fontSize:"clamp(20px,2.8vw,38px)", fontWeight:700, color:C.navy, lineHeight:1.3, maxWidth:"90%", margin:"0 0 8px 0" }}>
         {"What should we "}
         <em style={{ color:C.amber }}>teach</em>
         {" for critical thinking?"}
       </h2>
-      <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.5vw,18px)", color:C.mutedLt, lineHeight:1.7, maxWidth:"75%", margin:"0 0 44px 0" }}>
+      <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.3vw,16px)", color:C.body, lineHeight:1.6, maxWidth:"75%", margin:"0 0 24px 0" }}>
         {"If reasoning depends on how problems are presented, then teaching “how to think” may matter less than teaching “how to frame.”"}
       </p>
       {/* Metacognition node */}
-      <div style={{ background:"rgba(192,74,126,0.15)", border:"1px solid "+C.magenta, borderRadius:12, padding:"16px 32px", maxWidth:400, marginBottom:0 }}>
-        <p style={{ fontFamily:SANS, fontSize:"clamp(14px,1.5vw,18px)", fontWeight:700, color:C.white, margin:"0 0 4px 0" }}>Metacognition</p>
-        <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,14px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Know where you are and what you can handle"}</p>
+      <div style={{ background:"rgba(192,74,126,0.10)", border:"1px solid "+C.magenta, borderRadius:10, padding:"12px 28px", maxWidth:380 }}>
+        <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.4vw,17px)", fontWeight:700, color:C.navy, margin:"0 0 2px 0" }}>Metacognition</p>
+        <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,13px)", color:C.body, margin:0, lineHeight:1.4 }}>{"Know where you are and what you can handle"}</p>
       </div>
-      {/* Connector lines */}
-      <div style={{ display:"flex", justifyContent:"center", alignItems:"stretch", width:280, height:36 }}>
-        <div style={{ flex:1, borderRight:"1px solid "+C.mutedLt, borderBottom:"1px solid "+C.mutedLt, borderRadius:"0 0 0 0" }} />
-        <div style={{ flex:1, borderLeft:"1px solid "+C.mutedLt, borderBottom:"1px solid "+C.mutedLt, borderRadius:"0 0 0 0" }} />
+      {/* Connector */}
+      <div style={{ width:1, height:16, background:C.borderDk }} />
+      <div style={{ display:"flex", alignItems:"flex-start", width:240 }}>
+        <div style={{ flex:1, borderBottom:"1px solid "+C.borderDk, height:1, marginTop:0 }} />
+        <div style={{ flex:0, width:1 }} />
+        <div style={{ flex:1, borderBottom:"1px solid "+C.borderDk, height:1, marginTop:0 }} />
       </div>
-      <div style={{ display:"flex", justifyContent:"center", width:280, height:20 }}>
-        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:"100%", background:C.mutedLt }} /></div>
-        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:"100%", background:C.mutedLt }} /></div>
+      <div style={{ display:"flex", width:240 }}>
+        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:16, background:C.borderDk }} /></div>
+        <div style={{ flex:1, display:"flex", justifyContent:"center" }}><div style={{ width:1, height:16, background:C.borderDk }} /></div>
       </div>
       {/* Two branches */}
-      <div style={{ display:"flex", gap:32, justifyContent:"center", maxWidth:"90%" }}>
-        <div style={{ flex:1, maxWidth:280, background:"rgba(91,138,114,0.12)", border:"1px solid "+C.sage, borderRadius:12, padding:"16px 20px", textAlign:"center" }}>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.sage, margin:"0 0 6px 0", fontWeight:600 }}>{"Heuristic is reliable →"}</p>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.3vw,16px)", fontWeight:700, color:C.white, margin:"0 0 6px 0" }}>Ecological awareness</p>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Trust it — not all biases are bugs. Know when fast thinking works."}</p>
+      <div style={{ display:"flex", gap:24, justifyContent:"center", maxWidth:"92%" }}>
+        <div style={{ flex:1, maxWidth:280, background:"rgba(91,138,114,0.08)", border:"1px solid "+C.sage, borderRadius:10, padding:"12px 16px", textAlign:"center" }}>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.sage, margin:"0 0 4px 0", fontWeight:600 }}>{"Heuristic is reliable →"}</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.2vw,15px)", fontWeight:700, color:C.navy, margin:"0 0 4px 0" }}>Ecological awareness</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.body, margin:0, lineHeight:1.45 }}>{"Trust it — not all biases are bugs. Know when fast thinking works."}</p>
         </div>
-        <div style={{ flex:1, maxWidth:280, background:"rgba(196,154,60,0.12)", border:"1px solid "+C.amber, borderRadius:12, padding:"16px 20px", textAlign:"center" }}>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.amber, margin:"0 0 6px 0", fontWeight:600 }}>{"Heuristic is unreliable →"}</p>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(13px,1.3vw,16px)", fontWeight:700, color:C.white, margin:"0 0 6px 0" }}>Problem reframing</p>
-          <p style={{ fontFamily:SANS, fontSize:"clamp(11px,1vw,13px)", color:C.mutedLt, margin:0, lineHeight:1.5 }}>{"Redefine the question and solve it in a format that reduces cognitive load."}</p>
+        <div style={{ flex:1, maxWidth:280, background:"rgba(196,154,60,0.08)", border:"1px solid "+C.amber, borderRadius:10, padding:"12px 16px", textAlign:"center" }}>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.amber, margin:"0 0 4px 0", fontWeight:600 }}>{"Heuristic is unreliable →"}</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(12px,1.2vw,15px)", fontWeight:700, color:C.navy, margin:"0 0 4px 0" }}>Problem reframing</p>
+          <p style={{ fontFamily:SANS, fontSize:"clamp(10px,0.9vw,12px)", color:C.body, margin:0, lineHeight:1.45 }}>{"Redefine the question and solve it in a format that reduces cognitive load."}</p>
         </div>
       </div>
     </div>
     <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:GR }} />
-    <SlideNum n={22} total={TOTAL} dark />
+    <SlideNum n={22} total={TOTAL} />
   </Slide>);
 }
 
@@ -1256,6 +1258,7 @@ function S22() {
 function App() {
   const [cur, setCur] = useState(0);
   const [fs, setFs] = useState(false);
+  const [scale, setScale] = useState(1);
   const slides = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22];
   const SC = slides[cur];
   const goN = useCallback(()=>setCur(c=>Math.min(slides.length-1,c+1)),[]);
@@ -1267,6 +1270,13 @@ function App() {
       document.exitFullscreen().catch(()=>{});
     }
   },[]);
+  const calcScale = useCallback(()=>{
+    if(!document.fullscreenElement){setScale(1);return;}
+    var sw=window.innerWidth, sh=window.innerHeight;
+    var slideW=960, slideH=540;
+    var s=Math.min(sw*0.95/slideW, sh*0.95/slideH);
+    setScale(s);
+  },[]);
   useEffect(()=>{
     const h=(e)=>{
       if(e.key==="ArrowRight"||e.key==="ArrowDown"){e.preventDefault();goN();}
@@ -1274,22 +1284,27 @@ function App() {
       if(e.key==="f"||e.key==="F"){toggleFs();}
       if(e.key==="Escape"&&document.fullscreenElement){document.exitFullscreen().catch(()=>{});}
     };
-    const fsc=()=>setFs(!!document.fullscreenElement);
+    const fsc=()=>{setFs(!!document.fullscreenElement);calcScale();};
+    const onResize=()=>{if(document.fullscreenElement)calcScale();};
     window.addEventListener("keydown",h);
     document.addEventListener("fullscreenchange",fsc);
-    return ()=>{window.removeEventListener("keydown",h);document.removeEventListener("fullscreenchange",fsc);};
-  },[goN,goP,toggleFs]);
-  return (<div style={{ background:C.cream, minHeight:"100vh", fontFamily:SANS, color:C.body, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:fs?"center":"flex-start", padding:fs?"16px":"32px 16px" }}>
-    <div style={{ width:"100%", maxWidth:fs?1200:960 }}>
-      <SC />
-      <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, opacity:fs?0:1, transition:"opacity 0.3s", pointerEvents:fs?"none":"auto" }}>
+    window.addEventListener("resize",onResize);
+    return ()=>{window.removeEventListener("keydown",h);document.removeEventListener("fullscreenchange",fsc);window.removeEventListener("resize",onResize);};
+  },[goN,goP,toggleFs,calcScale]);
+  var slideW=960, slideH=540;
+  return (<div style={{ background:C.cream, minHeight:"100vh", height:fs?"100vh":"auto", fontFamily:SANS, color:C.body, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:fs?"center":"flex-start", padding:fs?"0":"32px 16px", overflow:fs?"hidden":"visible" }}>
+    <div style={fs?{ width:slideW*scale, height:slideH*scale }:{ width:"100%", maxWidth:960 }}>
+      <div style={fs?{ width:slideW, height:slideH, transform:"scale("+scale+")", transformOrigin:"top left" }:{}}>
+        <SC />
+      </div>
+      {!fs&&<div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12 }}>
         <NavBtn onClick={goP} disabled={cur===0}>{"\u2190 Prev"}</NavBtn>
         <div style={{ display:"flex", gap:5 }}>
           {slides.map((_,i)=>(<button key={i} onClick={()=>setCur(i)} style={{ width:cur===i?22:8, height:8, borderRadius:4, background:cur===i?C.navy:C.borderDk, border:"none", cursor:"pointer", transition:"all 0.2s ease" }} />))}
         </div>
         <NavBtn onClick={goN} disabled={cur===slides.length-1}>{"Next \u2192"}</NavBtn>
         <button onClick={toggleFs} style={{ background:"transparent", border:"1px solid "+C.borderDk, borderRadius:6, padding:"8px 12px", cursor:"pointer", fontFamily:SANS, fontSize:13, color:C.navy, marginLeft:8 }} title="Fullscreen (F)">{"\u26f6"}</button>
-      </div>
+      </div>}
     </div>
   </div>);
 }
